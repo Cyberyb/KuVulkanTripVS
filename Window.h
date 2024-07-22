@@ -15,10 +15,18 @@ public:
 	GLFWwindow* GetWindow();
 	void GetWidthAndHeight(uint32_t& widthRef, uint32_t& heightRef);
 
+	bool framebufferResized = false;
 private:
 	uint32_t winWidth;
 	uint32_t winHeight;
 	GLFWwindow* window;
+
+	//static void framebufferResizeCallback(GLFWwindow* window, int width, int height)
+	//{
+	//	auto app = reinterpret_cast<VulkanWindow*>(glfwGetWindowUserPointer(window));
+	//	app->framebufferResized = true;
+	//}
+	
 };
 
 VulkanWindow::VulkanWindow()
@@ -44,6 +52,9 @@ inline void VulkanWindow::InitWindow()
 	glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
 	window = glfwCreateWindow(winWidth, winHeight, "Vulkan", nullptr, nullptr);
+	
+	//glfwSetWindowUserPointer(window, this);
+	//glfwSetFramebufferSizeCallback(window, framebufferResizeCallback);
 }
 
 inline GLFWwindow* VulkanWindow::GetWindow()
