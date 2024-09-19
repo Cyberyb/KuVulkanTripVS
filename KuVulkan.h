@@ -1,0 +1,23 @@
+#pragma once
+#include <vulkan/vulkan.h>
+#define GLFW_INCLUDE_VULKAN
+#include <GLFW/glfw3.h>
+#include <iostream>
+#include <stdexcept>
+#include <cstdlib>
+#include <vector>
+#include <cstring>
+#include <map>
+#include <optional>
+#include <set>
+#include <limits>
+#include <algorithm>
+#include <fstream>
+#define GLM_FORCE_RADIANS
+//将针对OpenGL平台的[-1,1]的NDC空间变为[0,1]
+#define GLM_FORCE_DEPTH_ZERO_TO_ONE
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <chrono>
+#define STB_IMAGE_IMPLEMENTATION
+#include <stb_image.h>
